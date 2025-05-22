@@ -32,7 +32,7 @@ export class InactivityTimerService {
   }
 
   private startInactivityCheck() {
-    this.stopInactivityCheck(); // prevent multiple intervals
+    this.stopInactivityCheck(); 
     this.intervalId = setInterval(() => {
       const currentTime = Date.now();
       const timeDifference = currentTime - this.lastActivityTime;

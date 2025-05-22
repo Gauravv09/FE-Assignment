@@ -10,7 +10,7 @@ import { ProfileHeaderComponent } from '../instagram/profile-header/profile-head
   selector: 'app-profile-gallery',
   templateUrl: './profile-gallery.component.html',
   styleUrls: ['./profile-gallery.component.scss'],
-  imports: [CommonModule, GridGalleryComponent, TabsComponent, ProfileHeaderComponent, SidebarComponent],
+  imports: [CommonModule, GridGalleryComponent, TabsComponent, ProfileHeaderComponent],
 })
 export class ProfileGalleryComponent {
   photos = [

@@ -25,7 +25,6 @@
   margin: 5px 0 0 0;
 }
 
-/* Grid container */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
@@ -33,10 +32,9 @@
   padding: 10px;
 }
 
-/* Each photo item */
 .grid-item img {
   width: 100%;
-  aspect-ratio: 1 / 1; /* keeps square */
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   cursor: pointer;
   border-radius: 3px;

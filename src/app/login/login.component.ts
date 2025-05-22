@@ -5,12 +5,12 @@ import { HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { InactivityTimerService } from '../services/inavtivity-timer.service';
 import { AuthService } from '../services/auth.service'
-import { HttpClientModule } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, HttpClientModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   
@@ -44,17 +44,17 @@ export class LoginComponent {
     this.router.navigate(['/register']);
   }
 
-  simulate401() {
+   simulate401() {
     this.http.get('https://httpstat.us/401').subscribe({
-      next: res => {},
-      error: err => {}
+      next: res => console.log('Success:', res),
+      error: err => console.error('Caught by component:', err)
     });
   }
 
   simulate503() {
     this.http.get('https://httpstat.us/503').subscribe({
-      next: res => {},
-      error: err => {}
+      next: res => console.log('Success:', res),
+      error: err => console.error('Caught by component:', err)
     });
-  }
+}
 }

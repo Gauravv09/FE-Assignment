@@ -20,7 +20,7 @@ export class GridGalleryComponent {
 
   selectedImage: string | null = null;
 
-  likedImages: { [key: string]: boolean } = {}; // key is image path
+  likedImages: { [key: string]: boolean } = {}; 
 
   openImage(image: string) {
     this.selectedImage = image;
@@ -31,13 +31,13 @@ export class GridGalleryComponent {
   }
 
   toggleLike(event: Event) {
-    event.stopPropagation(); // to prevent modal close
+    event.stopPropagation(); 
 
     if (this.selectedImage) {
       const currentStatus = this.likedImages[this.selectedImage] || false;
       this.likedImages[this.selectedImage] = !currentStatus;
 
-      // Trigger animation
+      
       const btn = event.currentTarget as HTMLElement;
       btn.classList.remove('liked');
       void btn.offsetWidth;

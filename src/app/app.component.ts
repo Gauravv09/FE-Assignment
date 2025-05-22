@@ -19,7 +19,7 @@ showWarningPopup: boolean = false;
 constructor(private loadingService: LoadingService, private router: Router) {
   this.loading$ = this.loadingService.loading$;
   this.router.events.subscribe(() => {
-    // Adjust routes as per your app (e.g., add '/forgot-password' etc.)
+    
     const publicRoutes = ['/', '/register'];
     this.showWarningPopup = !publicRoutes.includes(this.router.url);
   });

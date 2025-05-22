@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
 
 
@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './reactiveform.component.html',
-  styleUrls: ['./reactiveform.component.scss']
+  styleUrls: ['./reactiveform.component.scss'],
+  // providers: [provideHttpClient()]
 })
 export class ReactiveformComponent {
   regForm;

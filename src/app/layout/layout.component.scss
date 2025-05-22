@@ -1,9 +1,15 @@
-.app-layout {
+.layout-container {
   display: flex;
+  flex-direction: row;
+  min-height: 100vh;
 }
 
-.content {
-  margin-left: 240px;
-  padding: 16px;
-  width: 100%;
+app-sidebar {
+  width: 290px; 
+  flex-shrink: 0;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
 }

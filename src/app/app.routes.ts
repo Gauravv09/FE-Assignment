@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
+
 export const routes: Routes = [
   {
     path: '',
@@ -17,36 +18,40 @@ export const routes: Routes = [
     path: 'auth-timeout',
     loadComponent: () =>
       import('./pages/auth-timeout/auth-timeout.component').then(m => m.AuthTimeoutComponent),
-    
   },
   {
     path: 'service-unavailable',
     loadComponent: () =>
       import('./pages/service-unavailable/service-unavailable.component').then(m => m.ServiceUnavailableComponent),
-    
   },
+
+  
   {
-    path: 'home',
+    path: '',
+    canActivate: [AuthGuard],
     loadComponent: () =>
-      import('./pages/home/home.component').then(m => m.HomeComponent),
-    canActivate: [AuthGuard]
+      import('../app/layout/layout.component').then(m => m.LayoutComponent),
+    children: [
+      {
+        path: 'home',
+        loadComponent: () =>
+          import('./pages/home/home.component').then(m => m.HomeComponent),
+      },
+      {
+        path: 'notifications',
+        loadComponent: () =>
+          import('./pages/notifications/notifications.component').then(m => m.NotificationsComponent),
+      },
+      {
+        path: 'gallery',
+        loadComponent: () =>
+          import('./profile-gallery/profile-gallery.component').then(m => m.ProfileGalleryComponent),
+      },
+      {
+        path: 'profile',
+        loadComponent: () =>
+          import('./pages/profile/profile.component').then(m => m.ProfileComponent),
+      }
+    ]
   },
-  {
-    path: 'notifications',
-    loadComponent: () =>
-      import('./pages/notifications/notifications.component').then(m => m.NotificationsComponent),
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'gallery',
-    loadComponent: () =>
-      import('./profile-gallery/profile-gallery.component').then(m => m.ProfileGalleryComponent),
-      canActivate: [AuthGuard]
-  },
-  {
-    path: 'profile',
-    loadComponent: () =>
-      import('./pages/profile/profile.component').then(m => m.ProfileComponent),
-    canActivate: [AuthGuard]
-  }
 ];
