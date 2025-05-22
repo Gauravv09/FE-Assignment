@@ -1,0 +1,48 @@
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.profile-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.profile-info p {
+  color: #555;
+  margin: 5px 0 0 0;
+}
+
+/* Grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 6px;
+  padding: 10px;
+}
+
+/* Each photo item */
+.grid-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* keeps square */
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: transform 0.2s ease;
+}
+
+.grid-item img:hover {
+  transform: scale(1.05);
+}

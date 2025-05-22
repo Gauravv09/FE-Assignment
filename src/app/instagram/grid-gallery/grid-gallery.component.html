@@ -1,0 +1,41 @@
+<div class="grid-wrapper">
+  @if (images.length === 0) {
+    <div class="empty-state">No posts yet</div>
+  } @else {
+    <div class="grid">
+      @for (image of images; track image) {
+        <div class="grid-item" (click)="openImage(image)">
+          <img [src]="image" alt="Post" />
+        </div>
+      }
+    </div>
+  }
+
+  @if (selectedImage) {
+    <div class="modal-backdrop" (click)="closeImage()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <img [src]="selectedImage" alt="Selected Post" />
+
+        <div class="actions">
+          <button
+  class="icon-btn"
+  [class.liked]="isImageLiked()"
+  (click)="toggleLike($event)"
+  aria-label="Like"
+>
+  <i [ngClass]="isImageLiked() ? 'fa-solid fa-heart' : 'fa-regular fa-heart'"></i>
+</button>
+
+
+          <button class="icon-btn" aria-label="Comment">
+            <i class="fa-regular fa-comment"></i>
+          </button>
+
+          <button class="icon-btn" aria-label="Share">
+            <i class="fa-regular fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  }
+</div>

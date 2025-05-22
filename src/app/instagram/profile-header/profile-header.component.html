@@ -1,0 +1,40 @@
+<div class="profile-header">
+  <img
+    class="profile-pic"
+    [src]="profileImage"
+    alt="Profile Picture"
+    (click)="openImage()"
+  />
+
+  <div class="profile-info">
+    <div class="top-row">
+      <h2>Batman</h2>
+      <div class="actions">
+        <button>Edit profile</button>
+        <button>View archive</button>
+        <button class="logout-button" (click)="logout()">Log Out</button>
+
+        <span class="gear">⚙️</span>
+      </div>
+    </div>
+
+    <div class="stats">
+      <span><strong>0</strong> posts</span>
+      <span><strong>0</strong> followers</span>
+      <span><strong>0</strong> following</span>
+    </div>
+
+    <div class="bio">
+      <strong>“You either die a hero or live long enough to see yourself become the villain.”</strong>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+@if (selectedImage) {
+  <div class="modal-backdrop" (click)="closeImage()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <img [src]="selectedImage" alt="Profile Picture Preview" />
+    </div>
+  </div>
+}

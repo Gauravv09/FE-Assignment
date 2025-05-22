@@ -1,0 +1,44 @@
+<div class="instagram-register-container">
+  <div class="form-box">
+    <h1 class="logo">Instagram</h1>
+    <form [formGroup]="regForm" (ngSubmit)="register()">
+      
+      <!-- Name Field -->
+      <input type="text" placeholder="Full Name" formControlName="name" />
+      @if (regForm.get('name')?.touched && regForm.get('name')?.hasError('required')) {
+        <small>Name is required</small>
+      }
+
+      <!-- Password Field -->
+      <input type="password" placeholder="Password" formControlName="password" />
+      @if (regForm.get('password')?.touched && regForm.get('password')?.hasError('required')) {
+        <small>Password is required</small>
+      } @else if (regForm.get('password')?.touched && regForm.get('password')?.hasError('minlength')) {
+        <small>Password must be at least 6 characters</small>
+      }
+
+      <!-- ID Field -->
+      <input type="text" placeholder="Username" formControlName="id" />
+      @if (regForm.get('id')?.touched && regForm.get('id')?.hasError('required')) {
+        <small>Username is required</small>
+      }
+
+      <!-- Email Field -->
+      <input type="email" placeholder="Email Address" formControlName="email" />
+      @if (regForm.get('email')?.touched && regForm.get('email')?.hasError('required')) {
+        <small>Email is required</small>
+      } @else if (regForm.get('email')?.touched && regForm.get('email')?.hasError('email')) {
+        <small>Invalid email format</small>
+      }
+
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="regForm.invalid">Sign Up</button>
+    </form>
+
+    <div class="error-buttons">
+      <button (click)="simulate401()">Simulate 401 Error</button>
+      <button (click)="simulate503()">Simulate 503 Error</button>
+    </div>
+  </div>
+</div>
+
