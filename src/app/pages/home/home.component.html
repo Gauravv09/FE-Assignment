@@ -1,4 +1,55 @@
-<div class="home-wrapper">
-  <h1>Welcome to the Home Page</h1>
-  <p>This is a simple HomeComponent for testing layout.</p>
+<div class="home-container">
+  <!-- Left content: Stories & Feed -->
+  <div class="left-column">
+    <!-- Stories -->
+    <div class="stories">
+      <div class="story" *ngFor="let story of stories">
+        <img [src]="story.avatar" alt="avatar" />
+        <p>{{ story.username }}</p>
+      </div>
+    </div>
+
+    <!-- Feed -->
+    <div class="feed">
+      <div class="post" *ngFor="let post of posts">
+        <div class="post-header">
+          <img [src]="post.avatar" alt="avatar" />
+          <span>{{ post.username }}</span>
+        </div>
+        <img [src]="post.image" alt="Post image" class="post-img" />
+        <div class="post-footer">
+          <div class="icons">❤️ 💬 🔗</div>
+          <p class="caption"><strong>{{ post.username }}</strong> {{ post.caption }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right content: Suggestions -->
+  <div class="right-column">
+    <div class="user-profile">
+      <img src="https://i.pravatar.cc/40?img=10" alt="Your avatar">
+      <div>
+        <p><strong>gary_333_-_</strong></p>
+        <p class="gray">Gary</p>
+      </div>
+      <a>Switch</a>
+    </div>
+
+    <div class="suggestions-header">
+      <p class="gray">Suggested for you</p>
+      <a>See All</a>
+    </div>
+
+    <div class="suggestions-list">
+      <div class="suggestion" *ngFor="let suggestion of suggestions">
+        <img [src]="suggestion.avatar" alt="{{ suggestion.username }}">
+        <div>
+          <p><strong>{{ suggestion.username }}</strong></p>
+          <p class="gray small">Suggested for you</p>
+        </div>
+        <a>Follow</a>
+      </div>
+    </div>
+  </div>
 </div>

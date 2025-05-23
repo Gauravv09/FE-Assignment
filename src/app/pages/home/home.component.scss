@@ -1,3 +1,182 @@
-.home-wrapper {
-  padding-left: 265px; 
+:host {
+  display: block;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+  padding-left: 150px;
 }
+
+/* Stories */
+.stories {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  
+}
+
+.story {
+  text-align: center;
+  flex: 0 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.story:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.story img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #f56040;
+  transition: box-shadow 0.3s ease;
+}
+
+.story:hover img {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.story p {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+/* Feed */
+.feed {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.post {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  
+}
+
+.post-header img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  
+}
+
+.post-img {
+  width: 100%;
+  display: block;
+  border-top: 1px solid #eee;
+}
+
+.post-footer {
+  padding: 10px;
+}
+
+.icons {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.caption {
+  font-size: 14px;
+}
+
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 20px;
+}
+
+.left-column {
+  flex: 2;
+  max-width: 600px;
+}
+
+.right-column {
+  flex: 1;
+  max-width: 300px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.user-profile img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.user-profile > div {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.suggestions-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.gray {
+  color: gray;
+}
+
+.suggestions-list .suggestion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.suggestion img {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+.suggestion div {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.suggestion .gray {
+  color: gray;
+}
+
+.small {
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+  color: #0095f6;
+  font-size: 14px;
+}
+
